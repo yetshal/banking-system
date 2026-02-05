@@ -6,6 +6,7 @@ import com.banking.system.entity.Cuenta.EstadoCuenta;
 import com.banking.system.entity.Cuenta.TipoCuenta;
 import com.banking.system.repository.ClienteRepository;
 import com.banking.system.repository.CuentaRepository;
+import com.banking.system.service.CuentaService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;

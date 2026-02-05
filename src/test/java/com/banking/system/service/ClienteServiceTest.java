@@ -2,6 +2,7 @@ package com.banking.system.service;
 
 import com.banking.system.entity.Cliente;
 import com.banking.system.repository.ClienteRepository;
+import com.banking.system.service.ClienteService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;

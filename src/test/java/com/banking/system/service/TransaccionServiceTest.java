@@ -7,6 +7,7 @@ import com.banking.system.entity.Cuenta.TipoCuenta;
 import com.banking.system.entity.Transaccion;
 import com.banking.system.repository.CuentaRepository;
 import com.banking.system.repository.TransaccionRepository;
+import com.banking.system.service.TransaccionService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
