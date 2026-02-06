@@ -1,6 +1,3 @@
-com\banking\system\controller\CuentaControllerTest.class
-com\banking\system\controller\ClienteControllerTest.class
-com\banking\system\controller\TransaccionControllerTest.class
 com\banking\system\service\TransaccionServiceTest.class
 com\banking\system\service\CuentaServiceTest.class
 com\banking\system\service\ClienteServiceTest.class
