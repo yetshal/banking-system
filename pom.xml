@@ -103,6 +103,17 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M9</version>
+                <configuration>
+                    <!--
+                      Permite ejecutar Mockito/ByteBuddy en JDKs muy recientes.
+                      Nota: el proyecto compila a Java 17, pero el JDK del entorno
+                      puede ser más nuevo (p. ej. 25) y ByteBuddy puede requerir
+                      este flag experimental para instrumentación.
+                    -->
+                    <systemPropertyVariables>
+                        <net.bytebuddy.experimental>true</net.bytebuddy.experimental>
+                    </systemPropertyVariables>
+                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -1,0 +1,123 @@
+{
+  "info": {
+    "name": "Banking System API",
+    "_postman_id": "banking-system-api",
+    "description": "Colección Postman para Banking System API (Spring Boot).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "clienteId",
+      "value": "1"
+    },
+    {
+      "key": "cuentaId",
+      "value": "1"
+    },
+    {
+      "key": "cuentaOrigenId",
+      "value": "1"
+    },
+    {
+      "key": "cuentaDestinoId",
+      "value": "2"
+    }
+  ],
+  "item": [
+    {
+      "name": "Quick Examples",
+      "item": [
+        {
+          "name": "Clientes - Crear cliente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tipoIdentificacion\": \"CC\",\n  \"numeroIdentificacion\": \"123456789\",\n  \"nombres\": \"Juan\",\n  \"apellido\": \"Pérez\",\n  \"correoElectronico\": \"juan.perez@example.com\",\n  \"fechaNacimiento\": \"1990-01-15\"\n}"
+            },
+            "url": "{{baseUrl}}/api/clientes"
+          }
+        },
+        {
+          "name": "Cuentas - Crear cuenta (por clienteId)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tipoCuenta\": \"CUENTA_AHORRO\",\n  \"saldo\": 1000.00,\n  \"exentaGMF\": false\n}"
+            },
+            "url": "{{baseUrl}}/api/cuentas?clienteId={{clienteId}}"
+          }
+        },
+        {
+          "name": "Transacciones - Consignación",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cuentaId\": {{cuentaId}},\n  \"monto\": 250.00,\n  \"descripcion\": \"Depósito inicial\"\n}"
+            },
+            "url": "{{baseUrl}}/api/transacciones/consignacion"
+          }
+        },
+        {
+          "name": "Transacciones - Retiro",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cuentaId\": {{cuentaId}},\n  \"monto\": 100.00,\n  \"descripcion\": \"Retiro cajero\"\n}"
+            },
+            "url": "{{baseUrl}}/api/transacciones/retiro"
+          }
+        },
+        {
+          "name": "Transacciones - Transferencia",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cuentaOrigenId\": {{cuentaOrigenId}},\n  \"cuentaDestinoId\": {{cuentaDestinoId}},\n  \"monto\": 50.00,\n  \"descripcion\": \"Pago\"\n}"
+            },
+            "url": "{{baseUrl}}/api/transacciones/transferencia"
+          }
+        }
+      ]
+    }
+  ]
+}
+
